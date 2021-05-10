@@ -1,0 +1,37 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: qiyiProject
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/atcrowdfunding?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat  #开启监控过滤器
+  redis:
+    host: 192.168.188.146
+    port: 6379
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:com/offcn/mapper/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+logging:
+  file:
+    path: D:\java学习资料\4phase\七易众筹项目\log\
+  level:
+    com:
+      offcn: debug
+oss:
+  endpoint: http://oss-cn-beijing.aliyuncs.com
+  bucketDomain: http://offcn1231.oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAI5t6cSM18GqZMo1WDL9SA
+  accessKeySecret: pgC81eMfmt06YVhSd7ijqT15ePrW59
+  bucketName: offcn1231
